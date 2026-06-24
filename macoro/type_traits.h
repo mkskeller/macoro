@@ -141,14 +141,14 @@ namespace macoro
 
 	template<typename P, typename T>
 	inline decltype(auto) get_awaitable(
-		P& promise, T&& expr, enable_if_t<has_await_transform_member<P,T&&>::value, empty_state> m = {})
+		P& promise, T&& expr, enable_if_t<has_await_transform_member<P,T&&>::value, empty_state> = {})
 	{
 		return promise.await_transform(static_cast<T&&>(expr));
 	}
 
 	template<typename P, typename T>
 	inline decltype(auto) get_awaitable(
-		P& promise, T&& expr, enable_if_t<!has_await_transform_member<P,T&&>::value, empty_state> = {})
+		P& , T&& expr, enable_if_t<!has_await_transform_member<P,T&&>::value, empty_state> = {})
 	{
 		return static_cast<T&&>(expr);
 	}

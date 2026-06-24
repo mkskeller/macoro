@@ -569,7 +569,7 @@ namespace macoro
 					return base.frame_adapter_storage.get();
 				}
 
-				void operator delete(void* ptr, std::size_t size)
+				void operator delete(void*, std::size_t)
 				{
 				}
 

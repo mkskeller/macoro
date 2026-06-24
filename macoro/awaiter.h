@@ -20,7 +20,7 @@ namespace macoro
 
 		template<typename continuation, typename T>
 		enable_if_t<!has_set_continuation_member<continuation, T>::value>
-			set_continuation(continuation&& c, T&& mTask)
+			set_continuation(continuation&&, T&&)
 		{}
 
 		template<typename T, typename continuation>

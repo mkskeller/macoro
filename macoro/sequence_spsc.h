@@ -111,7 +111,7 @@ namespace macoro
 		}
 
 		[[nodiscard]]
-		auto wait_until_published(SEQUENCE targetSequence, SEQUENCE lastKnown) const noexcept
+		auto wait_until_published(SEQUENCE targetSequence, SEQUENCE) const noexcept
 		{
 			return wait_until_published(targetSequence);
 		}

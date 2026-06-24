@@ -560,7 +560,7 @@ namespace macoro
 			return alt;
 		}
 
-		void operator=(const detail::OkTag<value_type>& v)
+		void operator=(const detail::OkTag<value_type>&)
 		{
 			var() = {};
 		}
@@ -575,7 +575,7 @@ namespace macoro
 		}
 
 
-		bool operator==(const detail::OkTag<void>& v) const
+		bool operator==(const detail::OkTag<void>&) const
 		{
 			return has_value();
 		}
