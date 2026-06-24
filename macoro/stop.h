@@ -59,6 +59,6 @@ namespace macoro
 
 	inline stop_awaiter MACORO_OPERATOR_COAWAIT(stop_token t)
 	{
-		return std::move(t);
+		return t;
 	}
 }

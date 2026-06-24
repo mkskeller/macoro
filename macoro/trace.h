@@ -165,14 +165,15 @@ namespace macoro
 
 			bool await_ready() const noexcept { return true; }
 #ifdef MACORO_CPP_20
-			void await_suspend(std::coroutine_handle<> coro) noexcept
+			void await_suspend(std::coroutine_handle<>) noexcept
 			{
+
 				assert(0);
 			}
 #endif
 
 			void await_suspend(
-				coroutine_handle<> coro) noexcept
+				coroutine_handle<>) noexcept
 			{
 				assert(0);
 			}

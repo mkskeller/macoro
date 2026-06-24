@@ -206,12 +206,12 @@ namespace macoro
 
 
 
-			void add_child(traceable* child) final override
+			void add_child(traceable*) final override
 			{
 				assert(0);
 			}
 
-			void remove_child(traceable* child) final override
+			void remove_child(traceable*) final override
 			{
 				assert(0);
 			}

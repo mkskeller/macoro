@@ -108,7 +108,7 @@ namespace macoro
 			blocking_task<Awaitable> macoro_get_return_object() noexcept;
 
 			// intercept the dummy co_await and manually co_await m_awaiter.
-			auto& await_transform(Awaitable&& a)
+			auto& await_transform(Awaitable&&)
 			{
 				return *this;
 			}
@@ -180,7 +180,7 @@ namespace macoro
 	blocking_task<Awaitable> detail::blocking_promise<Awaitable>::macoro_get_return_object() noexcept { return { coroutine_handle<blocking_promise>::from_promise(*this, coroutine_handle_type::macoro) }; }
 
 	template<typename Awaitable>
-	auto make_blocking(Awaitable awaitable, std::source_location loc = std::source_location::current())
+	auto make_blocking(Awaitable awaitable, std::source_location = std::source_location::current())
 		-> blocking_task<Awaitable>
 	{
 #if MACORO_MAKE_BLOCKING_20

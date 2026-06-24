@@ -413,6 +413,7 @@ namespace macoro
 		using diff_t = typename TRAITS::difference_type;
 		using unsigned_diff_t = std::make_unsigned_t<diff_t>;
 		constexpr unsigned_diff_t maxSize = static_cast<unsigned_diff_t>(std::numeric_limits<diff_t>::max());
+		(void) maxSize;
 		assert(bufferSize <= maxSize);
 
 		SEQUENCE seq = initialSequence - (bufferSize - 1);
